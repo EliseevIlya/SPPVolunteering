@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping()
+@CrossOrigin(origins = "http://localhost:5656")
 public class EventsController {
     @Autowired
     private EventService eventService;
@@ -22,6 +23,7 @@ public class EventsController {
     private CompositionService compositionService;
     @Autowired
     private CompositionRepository compositionRepository;
+
 
 
     @GetMapping("/test")
