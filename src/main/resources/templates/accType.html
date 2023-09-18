@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Types List</title>
+</head>
+<body>
+<h1>Account Types List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Account Type Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="accountType : ${accountTypes}">
+        <td th:text="${accountType.idAccountType}"></td>
+        <td th:text="${accountType.accountTypeName}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

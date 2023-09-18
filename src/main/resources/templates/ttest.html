@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Календарь | Lamoda GM</title>
+    <script defer="defer" src="/js/chunk-vendors.a24940eb.js"></script>
+    <script defer="defer" src="/js/app.7d0b51e3.js"></script>
+    <link href="/css/chunk-vendors.a5d41a56.css" rel="stylesheet">
+    <link href="/css/app.a123ec51.css" rel="stylesheet">
+    <style type="text/css">
+.file-uploads {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+.file-uploads.file-uploads-html4 input, .file-uploads.file-uploads-html5 label {
+  /* background fix ie  click */
+  background: #fff;
+  opacity: 0;
+  font-size: 20em;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.file-uploads.file-uploads-html5 input, .file-uploads.file-uploads-html4 label {
+  /* background fix ie  click */
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  z-index: -1;
+  opacity: 0;
+}
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/452.dd5aecfa.css">
+    <meta name="description" content="Календарь">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Календарь | Lamoda GM">
+    <meta property="og:description" content="Календарь">
+    <meta property="og:site_name" content="Lamoda GM">
+    <meta property="og:image" content="https://gm.lamoda.ru/img/logo.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style id="vuecal-align-with-scrollbar" type="text/css">
+        .vuecal__weekdays-headings,.vuecal__all-day {padding-right: 6px}
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/400.432ff96f.css">
+    <style id="__web-inspector-hide-shortcut-style__">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+
+    </style>
+</head>
+<body class="">
+<div id="app" data-v-app="">
+    <div class="page --has-sidebar">
+        <div class="header" data-v-097f846e="">
+            <div class="header__container" data-v-097f846e="">
+                <div class="header__logo" data-v-097f846e=""><img src="/img/logo.57f3705e.svg" alt=""
+                                                                  data-v-097f846e=""></div>
+                <div class="header__user items-center" data-v-097f846e="">
+                    <div class="el-dropdown mr-24" data-v-097f846e=""><span
+                            class="el-dropdown-link text-blue-azure el-tooltip__trigger el-tooltip__trigger"
+                            id="el-id-5256-0" role="button" tabindex="0" aria-controls="el-id-5256-1"
+                            aria-expanded="false" aria-haspopup="menu" data-v-097f846e=""> Выбрать партнёра <i
+                            class="el-icon el-icon--right" data-v-097f846e=""><svg width="24" height="24"
+                                                                                   viewBox="0 0 24 24" fill="none"
+                                                                                   xmlns="http://www.w3.org/2000/svg"
+                                                                                   data-v-097f846e=""><path
+                            fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 14.5C11.8674 14.5 11.7402 14.4473 11.6464 14.3536L7.64645 10.3536C7.45119 10.1583 7.45119 9.84171 7.64645 9.64645C7.84171 9.45118 8.15829 9.45118 8.35355 9.64645L12 13.2929L15.6464 9.64645C15.8417 9.45118 16.1583 9.45118 16.3536 9.64645C16.5488 9.84171 16.5488 10.1583 16.3536 10.3536L12.3536 14.3536C12.2598 14.4473 12.1326 14.5 12 14.5Z"
+                            fill="#0098FF"></path></svg></i></span><!--v-if--></div>
+                    <span class="mr-24 mt-8" data-v-097f846e="">ИП Зятьков Алексей Валерьевич</span><!----><span
+                        class="mr-24 mt-8" data-v-097f846e="">Быково</span>
+                    <div class="el-dropdown" data-v-097f846e=""><span
+                            class="el-dropdown-link el-tooltip__trigger el-tooltip__trigger" id="el-id-5256-3"
+                            role="button" tabindex="0" aria-controls="el-id-5256-4" aria-expanded="false"
+                            aria-haspopup="menu" data-v-097f846e="">dlavdress@gmail.com <i
+                            class="el-icon el-icon--right" data-v-097f846e=""><svg width="24" height="24"
+                                                                                   viewBox="0 0 24 24" fill="none"
+                                                                                   xmlns="http://www.w3.org/2000/svg"
+                                                                                   data-v-097f846e=""><path
+                            fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 14.5C11.8674 14.5 11.7402 14.4473 11.6464 14.3536L7.64645 10.3536C7.45119 10.1583 7.45119 9.84171 7.64645 9.64645C7.84171 9.45118 8.15829 9.45118 8.35355 9.64645L12 13.2929L15.6464 9.64645C15.8417 9.45118 16.1583 9.45118 16.3536 9.64645C16.5488 9.84171 16.5488 10.1583 16.3536 10.3536L12.3536 14.3536C12.2598 14.4473 12.1326 14.5 12 14.5Z"
+                            fill="#000000"></path></svg></i></span><!--v-if--></div>
+                </div>
+            </div>
+        </div>
+        <nav class="menu" data-v-d52e641e="">
+            <div class="menu__burger" data-v-d52e641e="">
+                <div class="menu__burger-icon" data-v-d52e641e="">
+                    <div class="menu__burger-line menu__burger-line--first" data-v-d52e641e=""></div>
+                    <div class="menu__burger-line menu__burger-line--second" data-v-d52e641e=""></div>
+                    <div class="menu__burger-line menu__burger-line--third" data-v-d52e641e=""></div>
+                </div>
+            </div>
+            <ul class="menu__list" data-v-d52e641e="">
+                <li class="menu__item" data-v-d52e641e="">
+                    <div class="menu__icon el-tooltip__trigger el-tooltip__trigger" data-v-d52e641e="">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             data-v-d52e641e="">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M12.3123 1.60957C12.1297 1.46348 11.8703 1.46348 11.6877 1.60957L1.68765 9.60957C1.56904 9.70445 1.5 9.84811 1.5 10V22C1.5 22.1326 1.55268 22.2598 1.64645 22.3536C1.74021 22.4473 1.86739 22.5 2 22.5H8C8.27614 22.5 8.5 22.2761 8.5 22V13.5H15.5V22C15.5 22.2761 15.7239 22.5 16 22.5H22C22.2761 22.5 22.5 22.2761 22.5 22V10C22.5 9.84811 22.431 9.70445 22.3123 9.60957L12.3123 1.60957ZM2.5 21.5V10.2403L12 2.64031L21.5 10.2403V21.5H16.5V13C16.5 12.7239 16.2761 12.5 16 12.5H8C7.72386 12.5 7.5 12.7239 7.5 13V21.5H2.5Z"
+                                  fill="white"></path>
+                            <path d="M12.5 17C12.5 16.7239 12.2761 16.5 12 16.5C11.7239 16.5 11.5 16.7239 11.5 17V22C11.5 22.2761 11.7239 22.5 12 22.5C12.2761 22.5 12.5 22.2761 12.5 22V17Z"
+                                  fill="white"></path>
+                        </svg>
+                    </div><!----> Главная
+                </li>
+                <li class="menu__item" data-v-d52e641e="">
+                    <div class="menu__icon el-tooltip__trigger el-tooltip__trigger" data-v-d52e641e="">
+                        <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             data-v-d52e641e="">
+                            <path d="M44 14L24 4L4 14V34L24 44L44 34V14Z" stroke="white" stroke-width="2"
+                                  stroke-linejoin="round"></path>
+                            <path d="M4 14L24 24" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M24 44V24" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M44 14L24 24" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                            <path d="M34 9L14 19" stroke="white" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"></path>
+                        </svg>
+                    </div><!----> Поставки и возвраты
+                </li>
+                <li class="menu__item --active" data-v-d52e641e="">
+                    <div class="menu__icon el-tooltip__trigger el-tooltip__trigger" data-v-d52e641e="">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             data-v-d52e641e="">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M8.6377 2.5C8.6377 2.22386 8.41384 2 8.1377 2C7.86155 2 7.6377 2.22386 7.6377 2.5V3.75H4.5C3.67157 3.75 3 4.42157 3 5.25V19C3 19.8284 3.67157 20.5 4.5 20.5H20C20.8284 20.5 21.5 19.8284 21.5 19V5.25C21.5 4.42157 20.8284 3.75 20 3.75H16.8623V2.5C16.8623 2.22386 16.6384 2 16.3623 2C16.0862 2 15.8623 2.22386 15.8623 2.5V3.75H8.6377V2.5ZM15.8623 6V4.75H8.6377V6C8.6377 6.27614 8.41384 6.5 8.1377 6.5C7.86155 6.5 7.6377 6.27614 7.6377 6V4.75H4.5C4.22386 4.75 4 4.97386 4 5.25V8.14999H20.5V5.25C20.5 4.97386 20.2761 4.75 20 4.75H16.8623V6C16.8623 6.27614 16.6384 6.5 16.3623 6.5C16.0862 6.5 15.8623 6.27614 15.8623 6ZM20.5 9.14999H4V19C4 19.2761 4.22386 19.5 4.5 19.5H20C20.2761 19.5 20.5 19.2761 20.5 19V9.14999Z"
+                                  fill="white"></path>
+                        </svg>
+                    </div><!----> Календарь
+                </li>
+                <li class="menu__item" data-v-d52e641e="">
+                    <div class="menu__icon el-tooltip__trigger el-tooltip__trigger" data-v-d52e641e="">
+                        <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             data-v-d52e641e="">
+                            <path d="M19.9473 32.2632H35.0001M9 32.2632L11.0527 34.3159L15.158 30.2106M19.9473 22.158H35.0001M9 22.1579L11.0527 24.2106L15.158 20.1053M19.9473 12.0527H35.0001M9 12.0527L11.0527 14.1053L15.158 10M2 2H42V42H2V2Z"
+                                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div><!----> Реестр броней
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="container">
+                <div class="main"><h1 class="mb-24"> Календарь </h1>
+                    <div class="tabs mb-32" data-v-6696d68b="">
+                        <ul class="tabs__list" data-v-6696d68b="">
+                            <li class="tabs__item" data-v-6696d68b=""><a class="tabs__link --active" data-v-6696d68b="">Календарь</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <div class="calendar"
+                             direction="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+                             data-v-6dd172d3="">
+                            <div class="calendar__filters" data-v-6dd172d3="">
+                                <div class="el-select m-3 calendar__select" data-v-6dd172d3="">
+                                    <div class="select-trigger el-tooltip__trigger el-tooltip__trigger"><!--v-if-->
+                                        <div class="el-input el-input--suffix"><!-- input --><!-- prepend slot -->
+                                            <!--v-if-->
+                                            <div class="el-input__wrapper"><!-- prefix slot --><!--v-if--><input
+                                                    class="el-input__inner" type="text" readonly="" autocomplete="off"
+                                                    tabindex="0" placeholder="Входящие поставки" id="el-id-5256-22">
+                                                <!-- suffix slot --><span class="el-input__suffix"><span
+                                                        class="el-input__suffix-inner"><i
+                                                        class="el-icon el-select__caret el-select__icon"><svg
+                                                        viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path
+                                                        fill="currentColor"
+                                                        d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0z"></path></svg></i>
+                                                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                                                    <!--v-if--></span></span></div><!-- append slot --><!--v-if--></div>
+                                    </div>
+                                </div>
+                                <div class="el-select m-2 calendar__select" data-v-6dd172d3="">
+                                    <div class="select-trigger el-tooltip__trigger el-tooltip__trigger"><!--v-if-->
+                                        <div class="el-input el-input--suffix"><!-- input --><!-- prepend slot -->
+                                            <!--v-if-->
+                                            <div class="el-input__wrapper"><!-- prefix slot --><!--v-if--><input
+                                                    class="el-input__inner" type="text" readonly="" autocomplete="off"
+                                                    tabindex="0" placeholder="Тип отображения: календарь"
+                                                    id="el-id-5256-23"><!-- suffix slot --><span
+                                                    class="el-input__suffix"><span class="el-input__suffix-inner"><i
+                                                    class="el-icon el-select__caret el-select__icon"><svg
+                                                    viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path
+                                                    fill="currentColor"
+                                                    d="m488.832 344.32-339.84 356.672a32 32 0 0 0 0 44.16l.384.384a29.44 29.44 0 0 0 42.688 0l320-335.872 319.872 335.872a29.44 29.44 0 0 0 42.688 0l.384-.384a32 32 0 0 0 0-44.16L535.168 344.32a32 32 0 0 0-46.336 0z"></path></svg></i>
+                                                <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                                                <!--v-if--></span></span></div><!-- append slot --><!--v-if--></div>
+                                    </div>
+                                </div><!----></div>
+                        </div>
+                        <div class="vuecal__flex vuecal vuecal--month-view vuecal--ru vuecal--events-on-month-view vuecal--short-events"
+                             column="" lang="ru" default-view="month" style="height: 860px;">
+                            <div class="vuecal__header"><!---->
+                                <div class="vuecal__title-bar">
+                                    <button class="vuecal__arrow vuecal__arrow--prev" type="button"
+                                            aria-label="Previous month">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M2.39945 12C2.39945 11.7239 2.62331 11.5 2.89945 11.5L20.8995 11.5C21.1756 11.5 21.3995 11.7239 21.3995 12C21.3995 12.2761 21.1756 12.5 20.8995 12.5L2.89945 12.5C2.62331 12.5 2.39945 12.2761 2.39945 12Z"
+                                                  fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M9.25295 5.64645C9.44821 5.84171 9.44821 6.15829 9.25295 6.35355L3.60652 12L9.25295 17.6464C9.44821 17.8417 9.44821 18.1583 9.25295 18.3536C9.05769 18.5488 8.74111 18.5488 8.54585 18.3536L2.54586 12.3536C2.3506 12.1583 2.3506 11.8417 2.54586 11.6464L8.54585 5.64645C8.74111 5.45118 9.05769 5.45118 9.25295 5.64645Z"
+                                                  fill="#000000"></path>
+                                        </svg>
+                                    </button>
+                                    <div class="vuecal__flex vuecal__title" grow=""><span type="false"
+                                                                                          aria-label="false" class="">Сентябрь 2023</span>
+                                    </div><!---->
+                                    <button class="vuecal__arrow vuecal__arrow--next" type="button"
+                                            aria-label="Next month">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg" class="rotate-180">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M2.39945 12C2.39945 11.7239 2.62331 11.5 2.89945 11.5L20.8995 11.5C21.1756 11.5 21.3995 11.7239 21.3995 12C21.3995 12.2761 21.1756 12.5 20.8995 12.5L2.89945 12.5C2.62331 12.5 2.39945 12.2761 2.39945 12Z"
+                                                  fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M9.25295 5.64645C9.44821 5.84171 9.44821 6.15829 9.25295 6.35355L3.60652 12L9.25295 17.6464C9.44821 17.8417 9.44821 18.1583 9.25295 18.3536C9.05769 18.5488 8.74111 18.5488 8.54585 18.3536L2.54586 12.3536C2.3506 12.1583 2.3506 11.8417 2.54586 11.6464L8.54585 5.64645C8.74111 5.45118 9.05769 5.45118 9.25295 5.64645Z"
+                                                  fill="#000000"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="vuecal__flex vuecal__weekdays-headings">
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span class="full">Понедельник</span><span
+                                                    class="small">Пн</span><span class="xsmall">Пн</span><!----></div>
+                                            <!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span
+                                                    class="full">Вторник</span><span class="small">Вт</span><span
+                                                    class="xsmall">Вт</span><!----></div><!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span
+                                                    class="full">Среда</span><span class="small">Ср</span><span
+                                                    class="xsmall">Ср</span><!----></div><!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span
+                                                    class="full">Четверг</span><span class="small">Чт</span><span
+                                                    class="xsmall">Чт</span><!----></div><!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span
+                                                    class="full">Пятница</span><span class="small">Пт</span><span
+                                                    class="xsmall">Пт</span><!----></div><!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span
+                                                    class="full">Суббота</span><span class="small">Сб</span><span
+                                                    class="xsmall">Сб</span><!----></div><!----></div>
+                                    </div>
+                                    <div class="vuecal__flex vuecal__heading">
+                                        <div class="vuecal__flex" column="">
+                                            <div class="vuecal__flex weekday-label" grow=""><span class="full">Воскресенье</span><span
+                                                    class="small">Вс</span><span class="xsmall">Вс</span><!----></div>
+                                            <!----></div>
+                                    </div>
+                                </div><!----></div>
+                            <div class="vuecal__flex vuecal__body" grow="">
+                                <div class="vuecal__flex" column="" style="min-width: 100%;"><!---->
+                                    <div class="vuecal__bg vuecal__flex" column="">
+                                        <div class="vuecal__flex" row="" grow=""><!----><!---->
+                                            <div class="vuecal__flex vuecal__cells month-view" grow="" wrap="true"
+                                                 column="false"><!----><!---->
+                                                <div class="vuecal__flex" grow="" wrap="true" style="">
+                                                    <div class="vuecal__cell vuecal__cell--day1 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="28">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">28</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="29">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">29</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="30">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">30</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="31">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">31</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5 vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="1">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">1</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">06:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6 vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="2">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">2</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">00:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">01:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">06:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">08:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">09:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">10:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">11:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">12:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">13:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">14:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">15:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">16:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">17:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">18:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">20:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7 vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="3">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">3</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">01:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">06:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">08:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">09:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">10:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">11:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">12:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">13:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">14:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">15:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">16:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">17:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">18:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">20:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">21:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day1 vuecal__cell--selected vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="4">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">4</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">00:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">01:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">06:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2 vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="5">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">5</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">01:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">06:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3 vuecal__cell--has-events">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="6">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">6</div><!----><!---->
+                                                            <div class="vuecal__cell-events">
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">00:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">01:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">02:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">03:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">04:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                                <div class="vuecal__event vuecal__event-title-busy"
+                                                                     tabindex="0" draggable="false"><!---->
+                                                                    <div class="vuecal__event-title">05:00, Недоступно
+                                                                    </div><!----><!----><!----></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="7">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">7</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="8">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">8</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="9">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">9</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="10">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">10</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day1">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="11">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">11</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="12">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">12</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="13">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">13</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="14">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">14</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="15">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">15</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="16">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">16</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="17">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">17</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day1">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="18">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">18</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="19">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">19</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="20">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">20</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="21">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">21</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="22">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">22</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="23">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">23</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="24">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">24</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day1">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="25">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">25</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="26">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">26</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="27">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">27</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="28">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">28</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="29">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">29</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="30">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">30</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="1">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">1</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day1 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="2">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">2</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day2 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="3">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">3</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day3 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="4">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">4</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day4 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="5">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">5</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day5 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="6">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">6</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day6 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="7">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">7</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="vuecal__cell vuecal__cell--day7 vuecal__cell--out-of-scope">
+                                                        <div class="vuecal__flex vuecal__cell-content"
+                                                             data-split="false" column="" tabindex="0" aria-label="8">
+                                                            <!----><!---->
+                                                            <div class="vuecal__cell-date">8</div><!----><!----><!---->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!----></div>
+                        </div>
+                        <div class="el-overlay" style="z-index: 2032; display: none;">
+                            <div role="dialog" aria-modal="true" aria-labelledby="el-id-5256-20"
+                                 aria-describedby="el-id-5256-21" class="el-overlay-dialog"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="el-popper-container-6723">
+    <div class="el-popper is-pure is-light el-dropdown__popper" tabindex="-1" aria-hidden="true"
+         style="z-index: 2003; display: none; position: absolute; left: 1296px; top: 50px; margin: 0px;"
+         data-popper-placement="bottom"><!-- Workaround bug #6378 -->
+        <div class="el-scrollbar">
+            <div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                <div class="el-scrollbar__view el-dropdown__list" style="">
+                    <ul class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-5256-0"
+                        data-v-097f846e="" id="el-id-5256-1" style="outline: none;"><!--v-if-->
+                        <li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item"
+                            tabindex="-1" role="menuitem"><!--v-if-->ИП Зятьков Алексей Валерьевич
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
+            </div>
+            <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
+            </div>
+        </div>
+        <span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5px;"></span></div>
+    <div class="el-popper is-pure is-light el-dropdown__popper" tabindex="-1" aria-hidden="true"
+         style="z-index: 2004; display: none; position: absolute; left: 1751px; top: 50px; margin: 0px;"
+         data-popper-placement="bottom"><!-- Workaround bug #6378 -->
+        <div class="el-scrollbar">
+            <div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                <div class="el-scrollbar__view el-dropdown__list" style="">
+                    <ul class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-5256-3"
+                        data-v-097f846e="" id="el-id-5256-4" style="outline: none;"><!--v-if-->
+                        <li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item"
+                            tabindex="-1" role="menuitem"><!--v-if--> Выход
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
+            </div>
+            <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
+            </div>
+        </div>
+        <span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5px;"></span></div>
+    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+    <div class="el-popper is-pure is-light el-select__popper" tabindex="-1" aria-hidden="true"
+         style="z-index: 2041; position: absolute; left: 593px; top: 255px; margin: 0px; display: none;"
+         data-popper-placement="bottom-start"><!-- Workaround bug #6378 -->
+        <div class="el-select-dropdown" style="min-width: 290px;">
+            <div class="el-scrollbar" style="">
+                <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                    <ul class="el-scrollbar__view el-select-dropdown__list" style=""><!--v-if-->
+                        <li class="el-select-dropdown__item" data-v-6dd172d3=""><span>Входящие поставки</span></li>
+                        <li class="el-select-dropdown__item" data-v-6dd172d3="">
+                            <span>Возвраты поставщикам/партнёрам</span></li>
+                    </ul>
+                </div>
+                <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                    <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
+                </div>
+                <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                    <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
+                </div>
+            </div><!--v-if--></div>
+        <span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 139px;"></span></div>
+    <div class="el-popper is-pure is-light el-select__popper" tabindex="-1" aria-hidden="true"
+         style="z-index: 2034; display: none; position: absolute; left: 1278px; top: 255px; margin: 0px;"
+         data-popper-placement="bottom-start"><!-- Workaround bug #6378 -->
+        <div class="el-select-dropdown" style="min-width: 290px;">
+            <div class="el-scrollbar" style="">
+                <div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default">
+                    <ul class="el-scrollbar__view el-select-dropdown__list" style=""><!--v-if-->
+                        <li class="el-select-dropdown__item" data-v-6dd172d3=""><span>Тип отображения: Календарь</span>
+                        </li>
+                        <li class="el-select-dropdown__item" data-v-6dd172d3=""><span>Тип отображения: Реестровый</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="el-scrollbar__bar is-horizontal" style="display: none;">
+                    <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
+                </div>
+                <div class="el-scrollbar__bar is-vertical" style="display: none;">
+                    <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
+                </div>
+            </div><!--v-if--></div>
+        <span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5px;"></span></div>
+</div>
+</body>
+</html>

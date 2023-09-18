@@ -1,0 +1,145 @@
+@import "_fonts.scss";
+@import "_null.scss";
+@import "_mixin.scss";
+
+.container{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+   
+    border: 3px solid #82C1FC;
+    padding: 10px 40px;
+    border-radius: 40px;
+    .header{
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #4C4C4C;
+        padding: 10px 20px;
+        font-weight: 300;
+        
+        border: 3px solid #82C1FC;
+        border-radius: 30px;
+
+        &__left{
+            display: flex;
+            align-items:center;
+            padding-left: 10px;
+
+            .header__img{
+                width: 100%;
+            }
+            .header__nav{
+                margin-left: 5px;
+                .nav_registration{
+                    text-decoration: none;
+                    cursor: pointer;
+                   
+                    @include adaptive-font(16, 12);
+                    color: #82C1FC;
+                }
+            }
+        }
+        &__right{
+            display: flex;
+            align-items:center;
+    
+            .header__circle{
+                width: 40px;
+                height: 40px;
+                background-color:#82C1FC;
+                border-radius: 50%;
+            }
+            .header__text{
+            
+                .nav_registration{
+                    text-decoration: none;
+                    cursor: pointer;
+                   
+                    @include adaptive-font(16, 12);
+                    color: #82C1FC;
+                }
+                margin-left: 10px;
+            }
+        }
+    }
+    
+    .main{
+        display: flex;
+        justify-content: center;
+        border: 3px solid #82C1FC;
+        border-radius:45px;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 30px;
+        &__title{
+            text-align:center;
+            color:#82C1FC;
+            @include adaptive-font(32, 20);
+        }
+        .form__center{
+            display: flex;
+            justify-content: center;
+            .form{
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .form__input{
+                    padding: 10px 20px;
+                    max-width: 450px;
+                    max-height: 65px;
+                    border: 3px solid #82C1FC;
+                    border-radius: 30px;
+                    color:#82C1FC;
+                    @include adaptive-font(16, 12);
+                    font-weight: 500;
+                    margin-top: 20px;
+                }
+                .form__input::placeholder{
+                    color: #82C1FC;
+                    @include adaptive-font(24, 18);
+                }
+                .form__btn{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 40px;
+                    margin-bottom: 10px;
+                    .input__btn-registration{
+                        font-weight: 700;
+                        @include adaptive-font(40, 24);
+                        background: #82C1FC;
+                        padding: 15px 10px;
+                        cursor: pointer;
+                        color:#FFFFFF;
+                        border-radius: 30px;
+                    }
+                   .input__btn-enter{
+                    color: #82C1FC;
+                    @include adaptive-font(24, 18);
+                    border-radius: 32.5px;
+                    border: 3px solid #82C1FC;
+                    background: #FFF;
+                    padding: 15px 30px;
+                   }
+                }
+            }
+            .form__registration{
+                margin-top: 5px;
+            }
+        }
+        
+    }
+    .footer{
+        margin-top: 15px;
+        height: 70px;
+        background: #82C1FC;
+        border-radius: 30px;
+    }
+}
+
+
+@import "_adaptive.scss";

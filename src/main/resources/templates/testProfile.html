@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование профиля </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+<!-- head -->
+<!-- main -->
+<div class="container mt-5 mb-5">
+  <h1>Редактирование профиля</h1>
+  <div th:each="el : ${post}" >
+    <form  method="post">
+      <input type="text" th:value="${el.lastName}" name="lastName" placeholder="Фамилия" class="form-control"><br>
+      <input type="text" th:value="${el.firstName}" name="firstName" placeholder="Имя" class="form-control"><br>
+      <input type="text" th:value="${el.patronymic}" name="patronymic" placeholder="Отчество" class="form-control"><br>
+      <input type="text" th:value="${el.gender}" name="gender" placeholder="Пол" class="form-control"><br>
+      <input type="text" th:value="${el.contactDetails}" name="contactDetails" placeholder="Контактные данные" class="form-control"><br>
+      <textarea  name="about" placeholder="О вас" class="form-control" th:text="${el.about}" /><br>
+
+      <button type="submit" class="btn btn-success">Обновить данные</button><br>
+      <a  th:href=" '/' +${el.user_id} + '/passwordChange' " >Сменить пароль</a><br>
+
+    </form>
+  </div>
+</div>
+<!-- footer -->
+
+</body>
+</html>

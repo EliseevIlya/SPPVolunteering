@@ -1,0 +1,34 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+nav,footer,header,aside
+{
+    display: block;
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 20px;
+    margin: 0;
+	padding: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: #85A7FE;    background-color:#FFFFFF;
+    scroll-behavior: smooth;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button{padding:0;border:0;}
+a{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+html, body {
+	overflow-x: hidden;
+}

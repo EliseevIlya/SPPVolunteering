@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Mendeleev.ru</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header__left">
+            <img class="header__img" src="../img/arm.png" alt="">
+            <div class="header__nav">
+                <a href="#" class="nav_registration">Mendeleev.ru</a>
+            </div>
+        </div>
+
+        <div class="header__right">
+
+            <div class="header__circle"></div>
+
+            <div class="header__text">
+                <a href="/registration" class="nav_registration">Регистрация</a>
+            </div>
+        </div>
+
+    </div>
+
+    <main class="main">
+        <div class="main__title">
+            Авторизация пользователя
+        </div>
+        <div class="form__center">
+            <form action="/login" method="post">
+
+
+                <input type="text" name="login" placeholder="Логин" class="form__input" >
+
+                <input type="text" name="password" placeholder="Пароль" class="form__input" >
+
+
+                <div class="form__btn">
+                    <input type="submit" value="Войти" class="input__btn-enter">
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+</div>
+
+</body>
+</html>

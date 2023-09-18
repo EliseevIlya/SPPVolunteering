@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Mendeleev.ru</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header__left">
+            <img class="header__img" src="../img/arm.png" alt="">
+            <div class="header__nav">
+                <a href="#" class="nav_registration">Mendeleev.ru</a>
+            </div>
+        </div>
+
+        <div class="header__right">
+
+            <div class="header__circle"></div>
+
+            <div class="header__text">
+                <a href="/login" class="nav_registration">Войти</a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <main class="main">
+       <div class="main__title">
+           Регистрация пользователя
+       </div>
+
+       <div class="form__center">
+           <form th:action="@{/registration}" method="post" th:object="${DBUser}" name="registration" class="form form__registration">
+               
+               <input th:field="*{login}" type="text" name="login" placeholder="login" class="form__input" >
+              
+               <input th:field="*{password}" type="text" name="password" placeholder="password" class="form__input" >
+    
+               <input th:field="*{lastName}" type="text" name="lastName" placeholder="lastName" class="form__input" >
+    
+               <input th:field="*{firstName}" type="text" name="firstName" placeholder="firstName" class="form__input" >
+    
+               <input th:field="*{patronymic}" type="text" name="patronymic" placeholder="patronymic" class="form__input" >
+
+               <input th:field="*{gender}" type="text" name="gender" placeholder="gender" class="form__input" >
+
+               <input th:field="*{contactDetails}" type="text" name="contactDetails" placeholder="contactDetails" class="form__input" >
+
+
+               <div class="form__btn">
+                   <input type="submit" value="Зарегестрироваться" class="input__btn-registration">
+               </div>
+           
+           </form>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+</div>
+
+</body>
+</html>
