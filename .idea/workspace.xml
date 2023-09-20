@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2b35e14-1afb-49c6-858e-c1bf2cf5b207" name="Changes" comment="" />
+    <list default="true" id="f2b35e14-1afb-49c6-858e-c1bf2cf5b207" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Composition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Composition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/interceptors/CurrentUserOrNullMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/interceptors/CurrentUserOrNullMethodArgumentResolver.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,18 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Летняя практика SPP/SPP2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Летняя практика SPP/SPP2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Летняя практика SPP\SPP2\src\main\java\volunteering\SPP" />
@@ -106,12 +117,30 @@
       <option name="presentableId" value="Default" />
       <updated>1690828237440</updated>
     </task>
+    <task id="LOCAL-00001" summary="1 commit">
+      <created>1695037845313</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695037845313</updated>
+    </task>
+    <task id="LOCAL-00002" summary="@CrossOrigin add (need fix to webSecur)">
+      <created>1695037977990</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695037977990</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="1 commit" />
+    <MESSAGE value="@CrossOrigin add (need fix to webSecur)" />
+    <option name="LAST_COMMIT_MESSAGE" value="@CrossOrigin add (need fix to webSecur)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

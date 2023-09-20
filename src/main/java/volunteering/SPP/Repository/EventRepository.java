@@ -23,6 +23,8 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             "join event_category ec on ec.category_id=e.category_id\n" +
             "where c.role_id='1' and e.completed='false' ", nativeQuery = true)
     List<Object[]> findNotCompletedEventCreatorInfo(Long roleId);
+    boolean existsByNameAndDescriptionAndStartTime(String name, String description, String startTime);
+    Event findByNameAndDescriptionAndStartTime(String name, String description, String startTime);
 
 
 

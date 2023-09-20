@@ -1,10 +1,8 @@
 package volunteering.SPP.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 import volunteering.SPP.DBEntity.DBUser;
-import volunteering.SPP.Repository.UserRepository;
 import volunteering.SPP.Services.UserService;
 import volunteering.SPP.annotations.CurrentUser;
 

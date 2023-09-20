@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import volunteering.SPP.DBEntity.Composition;
+import volunteering.SPP.DBEntity.DBUser;
 import volunteering.SPP.DBEntity.Event;
 import volunteering.SPP.Repository.CompositionRepository;
 import volunteering.SPP.Repository.EventRepository;
@@ -22,25 +24,29 @@ public class EventService {
     @Autowired
     private EventRepository eventRepository;
     @Autowired
+    private CompositionService compositionService;
+    @Autowired
     private CompositionRepository compositionRepository;
 
-    public List<Event> getAll(){
+    public List<Event> getAll() {
         return eventRepository.findAll();
     }
-    public  List<Event> getAllNotCompleted(){
+
+    public List<Event> getAllNotCompleted() {
         return eventRepository.findByCompletedFalse();
     }
 
 
     public Optional<Event> getEventById(long id) throws ResponseStatusException {
-        Optional<Event> result =  eventRepository.findById(id);
-        if (!result.isPresent()){
+        Optional<Event> result = eventRepository.findById(id);
+        if (!result.isPresent()) {
             throw new DataIntegrityViolationException("Event not found");
         }
-        return result ;
+        return result;
     }
+
     public List<EventAddUserInfo> findNotCompletedEventCreatorInfo(Long roleId) {
-        List<Object[]> queryResult =  eventRepository.findNotCompletedEventCreatorInfo(roleId);
+        List<Object[]> queryResult = eventRepository.findNotCompletedEventCreatorInfo(roleId);
         List<EventAddUserInfo> eventAddUserInfoList = new ArrayList<>();
 
         for (Object[] row : queryResult) {
@@ -62,29 +68,37 @@ public class EventService {
 
         return eventAddUserInfoList;
     }
+
     public void update(Event event) {
-        long id=event.getEventId();
-        if(!eventRepository.existsById(id)) {
+        long id = event.getEventId();
+        if (!eventRepository.existsById(id)) {
             throw new EntityExistsException("Event doesn't exists");
         }
         //user.setPassword(passwordEncoder.encode(user.getPassword()));
         eventRepository.save(event);
     }
-    public void deleteEvent(Long id){
-        if(!eventRepository.existsById(id)) {
+
+    public void deleteEvent(Long id) {
+        if (!eventRepository.existsById(id)) {
             throw new EntityExistsException("Event doesn't exists");
         }
         eventRepository.deleteById(id);
     }
-    public void create(Event event) {
-        long id=event.getEventId();
-        if(eventRepository.existsById(id)) {
+
+    public void create(Event event, DBUser dbUser) {
+        String description = event.getDescription();
+        String name = event.getName();
+        String time = event.getStartTime();
+        if (eventRepository.existsByNameAndDescriptionAndStartTime(name, description, time)) {
             throw new EntityExistsException("Event already exists");
         }
-        //user.setPassword(passwordEncoder.encode(user.getPassword()));
         eventRepository.save(event);
+        Long id = eventRepository.findByNameAndDescriptionAndStartTime(name, description, time).getEventId();
+        compositionService.saveUserForEvent(1L,id,dbUser);
+
     }
-    public List<Object> findAllUserEventId(){
+
+    public List<Object> findAllUserEventId() {
         return compositionRepository.findByUserId(1l);
     }
 }

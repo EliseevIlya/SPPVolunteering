@@ -40,7 +40,7 @@ public class CurrentUserOrNullMethodArgumentResolver implements HandlerMethodArg
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         String id = webRequest.getHeader("ID");
         if (!StringUtils.hasLength(id) ) {
-            throw new UsernameNotFoundException(" HeaderLogin not found");
+            throw new UsernameNotFoundException(" Header ID not found");
         }
         return userService.getById(Long.parseLong(id)) ;
     }

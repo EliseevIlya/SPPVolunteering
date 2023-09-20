@@ -27,8 +27,12 @@ public class EventsController {
 
 
     @GetMapping("/test")
-    private List<Object> test(){
+    public List<Object> test(){
        return eventService.findAllUserEventId();
+    }
+    @GetMapping("/events/getAll")
+    public List<Event> getAllEvents(){
+        return eventService.getAll();
     }
 
     @GetMapping("/events")
@@ -55,7 +59,7 @@ public class EventsController {
     }
     @PostMapping("/event/create")
     public void eventCreate(@RequestBody Event event,@CurrentUser DBUser dbUser){
-
+        eventService.create(event,dbUser);
     }
 
 }

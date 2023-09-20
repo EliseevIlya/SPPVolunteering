@@ -2,6 +2,7 @@ package volunteering.SPP.DBEntity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Table(name = "Composition")
 @Getter
 @Setter
+@RequiredArgsConstructor
 public class Composition implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
