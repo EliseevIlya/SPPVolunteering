@@ -28,7 +28,7 @@ public class Event implements Serializable {
     @Column(name = "event_description")
     private String description;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "category_id")
     private EventCategory category;
 

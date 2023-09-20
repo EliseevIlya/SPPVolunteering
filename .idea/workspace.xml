@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2b35e14-1afb-49c6-858e-c1bf2cf5b207" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/dto/AllUsersInEventID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/dto/EventAndUserIDFromComposition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Composition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Composition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/DBEntity/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/CompositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/CompositionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/EventRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/interceptors/CurrentUserOrNullMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/interceptors/CurrentUserOrNullMethodArgumentResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/dto/EventAddUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/dto/EventAddUserInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695037977990</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="save event">
+      <created>1695194202421</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695194202421</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,7 +149,8 @@
     </ignored-roots>
     <MESSAGE value="1 commit" />
     <MESSAGE value="@CrossOrigin add (need fix to webSecur)" />
-    <option name="LAST_COMMIT_MESSAGE" value="@CrossOrigin add (need fix to webSecur)" />
+    <MESSAGE value="save event" />
+    <option name="LAST_COMMIT_MESSAGE" value="save event" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -19,7 +19,7 @@ public class EventAddUserInfo {
     private Long categoryId;
     private String categoryName;
     private boolean completed;
-    private String firstName;
+    private String login;
     private String contactDetails;
     private Long userId;
     private String roleName;

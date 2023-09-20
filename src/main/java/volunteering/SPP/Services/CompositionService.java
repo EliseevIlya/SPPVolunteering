@@ -1,5 +1,6 @@
 package volunteering.SPP.Services;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,10 @@ public class CompositionService {
         compositionRepository.save(composition);
     }// добавить проверку зарегестрирован ли уже юзер на ивент
 
+    @Transactional
     public void deleteUserFromEvent(Long userID,Long eventID) throws Exception {
-        if (!compositionRepository.findByUserIdAndEventId(userID,eventID)){
+        int count = compositionRepository.countByUserIdAndEventId(userID, eventID);
+        if (count == 0){
             throw new Exception("User not registered for this event");
         }
         compositionRepository.deleteByUserIdAndEventId(userID,eventID);

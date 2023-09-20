@@ -18,7 +18,7 @@ public class Composition implements Serializable {
     @Column(name = "record_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "event_id")
     private Event event;
 
