@@ -45,7 +45,7 @@ public class EventsController {
     }
 
     @GetMapping("/eventInfo")
-    public EventAddUserInfo geteventInfoWithCreatorInfo(@RequestHeader("eventId") String eventID){
+    public EventAddUserInfo getEventInfoWithCreatorInfo(@RequestHeader("eventId") String eventID){
        return eventService.findEventPlusCreatorInfo(1l, Long.valueOf(eventID));
     }
     @PostMapping("/events/reguser")
