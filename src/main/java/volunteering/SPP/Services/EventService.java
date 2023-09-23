@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import volunteering.SPP.DBEntity.Composition;
 import volunteering.SPP.DBEntity.DBUser;
 import volunteering.SPP.DBEntity.Event;
 import volunteering.SPP.Repository.CompositionRepository;
@@ -47,30 +46,6 @@ public class EventService {
         return result;
     }
 
-    public List<EventAddUserInfo> findNotCompletedEventCreatorInfo(Long roleId) {
-        List<Object[]> queryResult = eventRepository.findNotCompletedEventCreatorInfo(roleId);
-        List<EventAddUserInfo> eventAddUserInfoList = new ArrayList<>();
-
-        for (Object[] row : queryResult) {
-            EventAddUserInfo eventInfo = new EventAddUserInfo();
-            eventInfo.setEventId((Long) row[0]);
-            eventInfo.setName((String) row[1]);
-            eventInfo.setStartTime((String) row[2]);
-            eventInfo.setLocation((String) row[3]);
-            eventInfo.setEventDescription((String) row[4]);
-            eventInfo.setCategoryId((Long) row[5]);
-            eventInfo.setCategoryName((String) row[6]);
-            eventInfo.setCompleted((boolean) row[7]);
-            eventInfo.setLogin((String) row[8]);
-            eventInfo.setContactDetails((String) row[9]);
-            eventInfo.setUserId((Long) row[10]);
-            eventInfo.setRoleName((String) row[11]);
-            eventAddUserInfoList.add(eventInfo);
-        }
-
-        return eventAddUserInfoList;
-    }
-
     public void update(Event event) {
         long id = event.getEventId();
         if (!eventRepository.existsById(id)) {
@@ -102,6 +77,31 @@ public class EventService {
 
     }
 
+    //возращает все не законченные ивенты + инфа о создателе
+    public List<EventAddUserInfo> findNotCompletedEventCreatorInfo(Long roleId) {
+        List<Object[]> queryResult = eventRepository.findNotCompletedEventCreatorInfo(roleId);
+        List<EventAddUserInfo> eventAddUserInfoList = new ArrayList<>();
+
+        for (Object[] row : queryResult) {
+            EventAddUserInfo eventInfo = new EventAddUserInfo();
+            eventInfo.setEventId((Long) row[0]);
+            eventInfo.setName((String) row[1]);
+            eventInfo.setStartTime((String) row[2]);
+            eventInfo.setLocation((String) row[3]);
+            eventInfo.setEventDescription((String) row[4]);
+            eventInfo.setCategoryId((Long) row[5]);
+            eventInfo.setCategoryName((String) row[6]);
+            eventInfo.setCompleted((boolean) row[7]);
+            eventInfo.setLogin((String) row[8]);
+            eventInfo.setContactDetails((String) row[9]);
+            eventInfo.setUserId((Long) row[10]);
+            eventInfo.setRoleName((String) row[11]);
+            eventAddUserInfoList.add(eventInfo);
+        }
+
+        return eventAddUserInfoList;
+    }
+    //возращает id текущего юзера и id ивентов в которых он есть
     public List<EventAndUserIDFromComposition> findAllUserEventId(Long userID) {
         List<Object[]> queryResult =compositionRepository.findByUserId(userID);
         List<EventAndUserIDFromComposition> eventAddUserInfoList = new ArrayList<>();
@@ -113,6 +113,7 @@ public class EventService {
         }
         return eventAddUserInfoList;
     }
+    //возращает всех юзеров , зареганных в данном ивенте
     public List<AllUsersInEventID> findAllParticipantsEventID(Long eventID) {
         List<Object[]> queryResult =compositionRepository.findByEventId(eventID);
         List<AllUsersInEventID> eventAddUserInfoList = new ArrayList<>();
@@ -128,7 +129,7 @@ public class EventService {
         }
         return eventAddUserInfoList;
     }
-
+    //выводит информацию об ивенте + информация о создателе
     public EventAddUserInfo findEventPlusCreatorInfo(Long roleId, Long eventId) {
         List<Object[]> queryResult = eventRepository.findEventCreatorInfoByEventID(roleId,eventId);
         EventAddUserInfo eventInfo = new EventAddUserInfo();
@@ -151,5 +152,14 @@ public class EventService {
         }
 
         return eventInfo;
+    }
+    //выводит информацию об ивенте + информация о создателе для текущего юзера
+    public List<EventAddUserInfo> findEventPlusCreatorInfoByUserId(Long userId){
+        List<EventAndUserIDFromComposition> listEventsForUser = findAllUserEventId(userId);
+        List<EventAddUserInfo> eventsInfo = new ArrayList<>();
+        for (EventAndUserIDFromComposition e: listEventsForUser){
+            eventsInfo.add(findEventPlusCreatorInfo(1l,e.getEventid()));
+        }
+        return eventsInfo;
     }
 }

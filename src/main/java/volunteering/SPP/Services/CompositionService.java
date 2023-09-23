@@ -9,6 +9,7 @@ import volunteering.SPP.DBEntity.DBUser;
 import volunteering.SPP.Repository.CompositionRepository;
 import volunteering.SPP.Repository.EventRepository;
 import volunteering.SPP.Repository.EventRoleRepository;
+import volunteering.SPP.dto.RegOrNotPlusCreator;
 
 @Service
 @AllArgsConstructor
@@ -38,5 +39,18 @@ public class CompositionService {
             throw new Exception("User not registered for this event");
         }
         compositionRepository.deleteByUserIdAndEventId(userID,eventID);
+    }
+    public RegOrNotPlusCreator checkRegUser(Long userID, Long eventID){
+        int count = compositionRepository.countByUserIdAndEventId(userID, eventID);
+        System.out.println(count);
+        RegOrNotPlusCreator regOrNotUser = new RegOrNotPlusCreator();
+        if (count == 0){
+            regOrNotUser.setRegistrated(false);
+        }
+        else {
+            regOrNotUser.setRegistrated(true);
+        }
+        regOrNotUser.setCreatorId(compositionRepository.getCreatorIdForEventId(eventID));
+        return regOrNotUser;
     }
 }

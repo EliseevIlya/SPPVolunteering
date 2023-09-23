@@ -7,7 +7,7 @@ import volunteering.SPP.Services.UserService;
 
 @RestController
 @RequestMapping("/registration")
-@CrossOrigin(origins = "http://localhost:5656")
+
 public class RegistrationController {
     @Autowired
     private UserService userService;

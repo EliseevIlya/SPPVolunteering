@@ -8,7 +8,7 @@ import volunteering.SPP.annotations.CurrentUser;
 
 @RestController
 @RequestMapping("/profile")
-@CrossOrigin(origins = "http://localhost:5656")
+
 public class ProfileController {
 
     @Autowired
@@ -20,7 +20,6 @@ public class ProfileController {
     }
     @PutMapping
     public void update(@RequestBody DBUser dbUser){
-
         userService.update(dbUser);
     }
 }

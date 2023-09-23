@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping()
-@CrossOrigin(origins = "http://localhost:5656")
 public class EventsController {
     @Autowired
     private EventService eventService;
@@ -52,18 +51,26 @@ public class EventsController {
     public void regUserForEvent(@RequestBody EventIDdto eventID, @CurrentUser DBUser dbUser){
         compositionService.saveUserForEvent(2l, eventID.getEventId(),dbUser);
     }
+    @GetMapping("/myevents")
+    private List<EventAddUserInfo> getAllEventsForUser(@RequestHeader("ID") String userID){
+        System.out.println(userID);
+        return eventService.findEventPlusCreatorInfoByUserId(Long.valueOf(userID));
+    }
     @PutMapping("/myevents/change")
     public void changeEvent(@RequestBody Event event/*, @CurrentUser DBUser dbUser*/){
         // проверка может ли юзер менять ивент
         eventService.update(event);
     }
+
     @DeleteMapping("/myevents/change/delete")
-    public void deleteEvent(@RequestBody EventIDdto eventIDdto){
-        eventService.deleteEvent(eventIDdto.getEventId());
+    public void deleteEvent(@RequestHeader("eventId") String eventID){
+        System.out.println(eventID);
+        eventService.deleteEvent(Long.valueOf(eventID));
     }
     @DeleteMapping("/myevents/change/cancelreg")
-    public void cancelRegForUser(@RequestBody EventIDdto eventIDdto, @CurrentUser DBUser dbUser) throws Exception {
-        compositionService.deleteUserFromEvent(dbUser.getUserId(), eventIDdto.getEventId());
+    public void cancelRegForUser(@RequestHeader("eventId") String eventID, @CurrentUser DBUser dbUser) throws Exception {
+
+        compositionService.deleteUserFromEvent(dbUser.getUserId(), Long.valueOf(eventID));
     }
     @PostMapping("/event/create")
     public void eventCreate(@RequestBody Event event,@CurrentUser DBUser dbUser){

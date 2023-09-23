@@ -79,5 +79,10 @@ public interface CompositionRepository extends JpaRepository<Composition, Long> 
             "where c.event_id = :eventId ",nativeQuery = true)
     List<Object[]> findByEventId(@Param("eventId") Long eventId);
 
+    @Query(value = "select c.user_id\n" +
+            "from composition c\n" +
+            "where event_id = :eventId and role_id = 1" , nativeQuery = true)
+    Long getCreatorIdForEventId(@Param("eventId") Long eventId);
+
 }
 
