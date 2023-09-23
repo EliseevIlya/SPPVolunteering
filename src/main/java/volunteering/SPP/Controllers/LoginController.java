@@ -13,7 +13,7 @@ public class LoginController {
     private UserService userService;
     private UserLoginPassw ulp;
 
-    @PutMapping
+    @PostMapping
     public void getLoginPassword(@RequestBody UserLoginPassw userLoginPassw){
         ulp=userLoginPassw;
 

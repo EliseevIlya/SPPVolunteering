@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2b35e14-1afb-49c6-858e-c1bf2cf5b207" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/CompositionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/dto/RegOrNotPlusCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Config/WebConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/EventsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/CompositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Repository/CompositionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/CompositionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Services/EventService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695240377756</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="RegOrNotPlusCreator&#10;WebConfiguration disable cors&#10;GetAllEventsForUser">
+      <created>1695498700145</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695498700145</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,7 +171,8 @@
     <MESSAGE value="save event" />
     <MESSAGE value="checked delete methods, getAllUserInEventId,getEventInfoWithCreatorInfo" />
     <MESSAGE value="correct spelling mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct spelling mistake" />
+    <MESSAGE value="RegOrNotPlusCreator&#10;WebConfiguration disable cors&#10;GetAllEventsForUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegOrNotPlusCreator&#10;WebConfiguration disable cors&#10;GetAllEventsForUser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
