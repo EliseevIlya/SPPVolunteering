@@ -64,12 +64,10 @@ public class EventsController {
 
     @DeleteMapping("/myevents/change/delete")
     public void deleteEvent(@RequestHeader("eventId") String eventID){
-        System.out.println(eventID);
         eventService.deleteEvent(Long.valueOf(eventID));
     }
     @DeleteMapping("/myevents/change/cancelreg")
     public void cancelRegForUser(@RequestHeader("eventId") String eventID, @CurrentUser DBUser dbUser) throws Exception {
-
         compositionService.deleteUserFromEvent(dbUser.getUserId(), Long.valueOf(eventID));
     }
     @PostMapping("/event/create")

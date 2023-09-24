@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2b35e14-1afb-49c6-858e-c1bf2cf5b207" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/volunteering/SPP/Controllers/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695498700145</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="some fix">
+      <created>1695501906785</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695501906785</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -172,7 +178,8 @@
     <MESSAGE value="checked delete methods, getAllUserInEventId,getEventInfoWithCreatorInfo" />
     <MESSAGE value="correct spelling mistake" />
     <MESSAGE value="RegOrNotPlusCreator&#10;WebConfiguration disable cors&#10;GetAllEventsForUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="RegOrNotPlusCreator&#10;WebConfiguration disable cors&#10;GetAllEventsForUser" />
+    <MESSAGE value="some fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="some fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
